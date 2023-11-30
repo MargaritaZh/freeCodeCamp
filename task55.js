@@ -11,15 +11,16 @@ resultпроисходит из аргумента, переданного ме�
 //ЗАДАЧА Добавьте then метод в свое обещание. Используйте resultв качестве параметра его функцию обратного вызова и войдите resultв консоль.
 
 const makeServerRequest = new Promise((resolve, reject) => {
-  // responseFromServer is set to true to represent a successful response from a server
-  let responseFromServer = true;
+  // responseFromServer is set to false to represent an unsuccessful response from a server
+  let responseFromServer = false;
 
   if (responseFromServer) {
     resolve("We got the data");
   } else {
     reject("Data not received");
   }
-  makeServerRequest.then((result) => {
-    console.log(result);
-  });
+});
+
+makeServerRequest.then((result) => {
+  console.log(result);
 });
